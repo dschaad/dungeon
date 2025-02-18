@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjij2ljj1ija1"]
+
+[ext_resource type="PackedScene" uid="uid://k1ocxa5vx1ys" path="res://player/player.tscn" id="1_71d7u"]
+[ext_resource type="PackedScene" uid="uid://cpmm6s58s7bos" path="res://enemy/enemy.tscn" id="2_imjer"]
+
+[node name="Dungeon" type="Node2D"]
+metadata/_edit_vertical_guides_ = [150.0]
+
+[node name="Player" parent="." instance=ExtResource("1_71d7u")]
+position = Vector2(573, 571)
+script = null
+
+[node name="Enemy" parent="." instance=ExtResource("2_imjer")]
+position = Vector2(226, 142)
+script = null
+
+[node name="Enemy2" parent="." instance=ExtResource("2_imjer")]
+position = Vector2(949, 174)
+script = null

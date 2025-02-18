@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpmm6s58s7bos"]
+
+[ext_resource type="Script" path="res://enemy/enemy.gd" id="1_hngdn"]
+[ext_resource type="Texture2D" uid="uid://c20bm3ks8mdko" path="res://enemy/enemy.png" id="1_wrrak"]
+[ext_resource type="PackedScene" uid="uid://c3pm8cufrxyt4" path="res://weapons/bow.tscn" id="2_3067m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_korep"]
+size = Vector2(64, 64)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_hngdn")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+texture = ExtResource("1_wrrak")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_korep")
+
+[node name="Bow" parent="." instance=ExtResource("2_3067m")]

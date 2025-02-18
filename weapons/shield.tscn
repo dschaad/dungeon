@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cp5mbly31ibjs"]
+
+[ext_resource type="Texture2D" uid="uid://b6s5pjjdq50lu" path="res://weapons/weapon.png" id="1_0v77n"]
+[ext_resource type="Script" path="res://weapons/shield.gd" id="1_1vvhy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wrssp"]
+size = Vector2(16, 32)
+
+[node name="Shield" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_1vvhy")
+
+[node name="Weapon" type="Sprite2D" parent="."]
+position = Vector2(2.38419e-07, -1.43051e-06)
+scale = Vector2(2, 1.5)
+texture = ExtResource("1_0v77n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 1.5)
+shape = SubResource("RectangleShape2D_wrssp")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

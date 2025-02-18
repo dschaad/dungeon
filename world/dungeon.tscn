@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjij2ljj1ija1"]
+
+[ext_resource type="PackedScene" uid="uid://c0ambr073cnt8" path="res://world/floor1.tscn" id="1_4ncpj"]
+[ext_resource type="PackedScene" uid="uid://k1ocxa5vx1ys" path="res://player/player.tscn" id="1_71d7u"]
+[ext_resource type="PackedScene" uid="uid://cpmm6s58s7bos" path="res://enemy/enemy.tscn" id="2_imjer"]
+
+[node name="Dungeon" type="Node2D"]
+metadata/_edit_vertical_guides_ = [150.0]
+
+[node name="Floor1" parent="." instance=ExtResource("1_4ncpj")]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("1_71d7u")]
+position = Vector2(611, 573)
+rotation = -1.5708
+
+[node name="Enemy" parent="." instance=ExtResource("2_imjer")]
+position = Vector2(245, 150)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_imjer")]
+position = Vector2(943, 145)

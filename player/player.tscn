@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://k1ocxa5vx1ys"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_xgx6m"]
+[ext_resource type="Texture2D" uid="uid://s6unwwlhkwwt" path="res://player/player.png" id="2_h4jnj"]
+[ext_resource type="PackedScene" uid="uid://cs5b0jomcy304" path="res://weapons/sword.tscn" id="3_ae60q"]
+[ext_resource type="PackedScene" uid="uid://cp5mbly31ibjs" path="res://weapons/shield.tscn" id="4_bxuay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fr3gh"]
+size = Vector2(64, 64)
+
+[node name="Player" type="CharacterBody2D"]
+rotation = 4.71239
+motion_mode = 1
+script = ExtResource("1_xgx6m")
+
+[node name="Player" type="Sprite2D" parent="."]
+texture = ExtResource("2_h4jnj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fr3gh")
+
+[node name="Shield" parent="." instance=ExtResource("4_bxuay")]
+position = Vector2(57, -41)
+rotation = -0.349066
+
+[node name="Sword" parent="." instance=ExtResource("3_ae60q")]
+position = Vector2(14.0001, 60)

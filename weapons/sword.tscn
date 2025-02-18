@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs5b0jomcy304"]
+
+[ext_resource type="Script" path="res://weapons/sword.gd" id="1_ce26q"]
+[ext_resource type="Texture2D" uid="uid://b6s5pjjdq50lu" path="res://weapons/weapon.png" id="1_yvuq2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqgdm"]
+size = Vector2(16, 95.8778)
+
+[node name="WeaponPivot" type="Marker2D"]
+rotation = 1.5708
+script = ExtResource("1_ce26q")
+
+[node name="Sword" type="Area2D" parent="."]
+
+[node name="Weapon" type="Sprite2D" parent="Sword"]
+position = Vector2(0.223716, -58.8553)
+scale = Vector2(1, 3)
+texture = ExtResource("1_yvuq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sword"]
+position = Vector2(9.53674e-07, -58.9389)
+shape = SubResource("RectangleShape2D_oqgdm")
+
+[connection signal="body_entered" from="Sword" to="." method="_on_sword_body_entered"]
